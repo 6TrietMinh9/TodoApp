@@ -63,6 +63,10 @@ ul {
     padding: 0;
 }
 
+i {
+    cursor: pointer;
+}
+
 /* BACKGROUND */
 .back-ground {
     background-repeat: no-repeat;
@@ -122,6 +126,10 @@ ul {
 }
 
 /* TODO LIST */
+#todo-form input {
+    min-width: 400px;
+}
+
 #todo-list {
     width: 230px;
     max-height: 270px;
@@ -138,8 +146,13 @@ ul {
     align-items: center;
     justify-content: space-around;
     position: relative;
+    transition: all 0.25s ease;
     overflow: hidden;
 }
+#todo-list li:hover {
+    opacity: 0.8;
+}
+
 #todo-list li span {
     padding-right: 32px;
 }
@@ -150,31 +163,31 @@ ul {
 
 .delete::before {
     content: "";
-    width: 160px;
+    width: 200px;
     height: 1px;
     background-color: var(--white-color);
     position: absolute;
-    left: -180%;
+    left: -220%;
     animation: moveInL 1.5s ease forwards;
 }
 .delete::after {
     content: "";
-    width: 160px;
+    width: 200px;
     height: 1px;
     background-color: var(--white-color);
     position: absolute;
-    right: -180%;
+    right: -220%;
     animation: moveInR 1.5s ease forwards;
 }
 
 @keyframes moveInL {
     to {
-        left: 10%;
+        left: 2%;
     }
 }
 @keyframes moveInR {
     to {
-        right: 10%;
+        right: 2%;
     }
 }
 
