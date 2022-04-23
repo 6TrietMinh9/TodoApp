@@ -29,9 +29,10 @@ input {
     border: none;
     outline: none;
     border-radius: 4px;
-    padding: 8px 12px;
-    font-size: 30px;
+    padding: 16px 14px;
+    font-size: 24px;
     color: var(--white-color);
+    opacity: 1;
     background-color: transparent;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8), inset 4px 4px 10px rgba(255, 255, 255, 0.6);
     transition: all 0.25s ease;
@@ -43,13 +44,16 @@ input:hover {
 }
 
 input::-webkit-input-placeholder {
+    opacity: 0.8;
     transition: all 0.25s ease;
     color: var(--white-color);
 }
 input:hover::-webkit-input-placeholder {
+    opacity: 1;
     color: var(--white-color-lighter);
 }
 input:focus::-webkit-input-placeholder {
+    opacity: 1;
     color: var(--white-color-lighter);
 }
 
@@ -146,7 +150,7 @@ ul {
 
 .delete::before {
     content: "";
-    width: 200px;
+    width: 160px;
     height: 1px;
     background-color: var(--white-color);
     position: absolute;
@@ -155,7 +159,7 @@ ul {
 }
 .delete::after {
     content: "";
-    width: 200px;
+    width: 160px;
     height: 1px;
     background-color: var(--white-color);
     position: absolute;
@@ -165,12 +169,12 @@ ul {
 
 @keyframes moveInL {
     to {
-        left: -16%;
+        left: 10%;
     }
 }
 @keyframes moveInR {
     to {
-        right: -16%;
+        right: 10%;
     }
 }
 
