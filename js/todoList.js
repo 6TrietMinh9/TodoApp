@@ -11,12 +11,10 @@ function saveTodo() {
 }
 
 function deleteTodo(event) {
-    const i = event.srcElement;
-    i.classList.remove("fa-regular");
-    i.classList.remove("fa-square");
-    i.classList.add("fa-solid");
-    i.classList.add("fa-check");
-    const li = event.target.parentElement;
+    const button = event.target;
+    button.innerHTML = `<i class="fa-solid fa-check"></i>`;
+    console.log(button);
+    const li = button.parentElement;
     toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
     saveTodo();
     li.classList.add("delete");
@@ -26,19 +24,20 @@ function deleteTodo(event) {
 function paintTodo(newTodo) {
     const li = document.createElement("li");
     const span = document.createElement("span");
-    const i = document.createElement("i");
+    const button = document.createElement("button");
+
+    button.classList.add("delete-btn");
 
     li.id = newTodo.id;
     span.innerText = newTodo.text;
-    i.classList.add("fa-regular");
-    i.classList.add("fa-square");
+    button.innerHTML = `<i class="fa-regular fa-square"></i>`;
 
     li.appendChild(span);
-    li.appendChild(i);
+    li.appendChild(button);
 
     todoList.appendChild(li);
 
-    i.addEventListener("click", deleteTodo);
+    button.addEventListener("click", deleteTodo);
 }
 
 function handleTodoSubmit(event) {
